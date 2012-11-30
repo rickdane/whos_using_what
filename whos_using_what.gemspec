@@ -11,6 +11,7 @@ Gem::Specification.new do |s|
   s.files       = FileList['lib/**/*.rb', 'lib/whos_using_what.rb']
   s.add_dependency("oauth")
   s.add_dependency("json")
+  s.add_dependency("rest_client")
   s.homepage    =
       'http://rubygems.org/gems/whos_using_what'
 end
