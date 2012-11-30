@@ -5,7 +5,7 @@ class WhosUsingWhat
   if __FILE__ == $PROGRAM_NAME
 
     client = SearchClient.new()
-    client.search( "37signals.com", "ruby")
+    client.search( "ebay.com", "ruby")
 
   end
 

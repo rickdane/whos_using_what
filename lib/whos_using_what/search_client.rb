@@ -12,6 +12,9 @@ class SearchClient
 
     @positiveMatchUrlPatterns = Array.new.push("http")
 
+    @technologiesToSearchFor = Array.new.push("ruby").push("java").push("javascript").push("python").push("c++").push("c#")
+
+    @jobPageTokens = Array.new.push("job", "hiring", "career")
 
     @results = Hash.new
 
@@ -45,11 +48,31 @@ class SearchClient
       if (add)
         acceptedUrls.push(url)
       end
-
-
     end
+    acceptedUrls
+  end
+
+
+  def arraySearch(array, rawHtml)
+
+    rawHtml = rawHtml.downcase
+    array.each do |token|
+      if (rawHtml.index(token) != nil)
+        return true
+      end
+    end
+    return false
+  end
+
+
+  def determineIfUsesTechnology(technology, rawHtml)
+
+    isJobPage = arraySearch(@jobPageTokens, rawHtml)
+
+    return isJobPage
 
   end
+
 
   def search(site, query)
 
@@ -57,8 +80,24 @@ class SearchClient
 
     rawHtml = RestClient.get(url)
 
-    extractUrls(rawHtml, site)
+    urls = extractUrls(rawHtml, site)
+
+    isMatch = false
+
+    urls.each do |url|
+      if (determineIfUsesTechnology(query, RestClient.get(url)))
+        isMatch = true
+        break
+      end
+    end
+
+    if (isMatch)
+      puts site << " uses " << query
+    else
+      puts site << " does not use " << query
+    end
 
   end
 
 end
+
