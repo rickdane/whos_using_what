@@ -74,25 +74,40 @@ class SearchClient
   end
 
 
-  def search(site, query)
+  def search(query, site)
 
     url = "https://www.google.com/search?hl=en&as_q=" << query << "&as_epq=&as_oq=&as_eq=&as_nlo=&as_nhi=&lr=&cr=&as_qdr=all&as_sitesearch=" << site << "&as_occt=any&safe=off&tbs=&as_filetype=&as_rights="
 
-    rawHtml = RestClient.get(url)
+    begin
+      rawHtml = RestClient.get(url)
+    rescue
+
+    end
 
     urls = extractUrls(rawHtml, site)
 
     isMatch = false
 
-    urls.each do |url|
-      if (determineIfUsesTechnology(query, RestClient.get(url)))
-        isMatch = true
-        break
+    at_least_one_nonexception_url = false
+
+    urls.each do |cur_url|
+      begin
+        html = RestClient.get(cur_url)
+        uses_technology = determineIfUsesTechnology(query, html)
+        if (uses_technology)
+          isMatch = true
+          break
+        end
+        at_least_one_nonexception_url = true
+      rescue
       end
     end
 
-    if (isMatch)
+
+    if isMatch
       puts site << " uses " << query
+    elsif   !at_least_one_nonexception_url
+      puts "site: " << site << " did not have any url's that didn't encounter an exception"
     else
       puts site << " does not use " << query
     end
