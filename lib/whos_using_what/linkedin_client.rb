@@ -64,7 +64,7 @@ class LinkedinClient
     request_num = number_to_collect
     cnt = 0
     div = number_to_collect / @max_results
-    if (div > 0)
+    if (div <1)
       div = 1
     end
 
@@ -84,10 +84,15 @@ class LinkedinClient
 
       json = @access_token.get(url)
 
-      results.merge(parseCompanyResults(json.body))
+      tmp_results = parseCompanyResults(JSON.parse(json.body))
+
+      tmp_results.each do |key, value|
+        results[key] = value
+      end
+
       cnt = cnt + 1
     end
-    s = ""
+    results
   end
 
 end

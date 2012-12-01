@@ -9,7 +9,11 @@ class LinkedinClientTest
 
     linkedin_client = LinkedinClient.new(config["linkedin.api_key"], config["linkedin.api_secret"],config["linkedin.user_token"], config["linkedin.user_secret"], "http://linkedin.com")
 
-    linkedin_client.gather_company_data(0, 115, nil)
+   results = linkedin_client.gather_company_data(0, 115, nil)
+
+    results.each do |result|
+      puts result
+    end
 
   end
 
