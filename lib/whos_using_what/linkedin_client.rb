@@ -61,6 +61,10 @@ class LinkedinClient
 
   def gather_company_data(start, number_to_collect, industry_codes)
 
+    if number_to_collect == nil
+      number_to_collect = 20
+    end
+
     request_num = number_to_collect
     cnt = 0
     div = number_to_collect / @max_results
