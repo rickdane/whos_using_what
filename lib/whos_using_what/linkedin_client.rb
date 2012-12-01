@@ -1,5 +1,6 @@
 require 'oauth'
 require 'json'
+require_relative 'config_module'
 
 class LinkedinClient
 
@@ -7,18 +8,21 @@ class LinkedinClient
   attr :access_token, true
   attr :companyUrls
 
+  include ConfigModule
+
 
   def initialize(api_key, api_secret, user_token, user_secret, url)
+    super()
 
-    @industryCodes = "4,132,6,96,113";
     @numberResults = "5"
     @start = "15"
-    @companyUrls = Hash.new
 
     consumer = OAuth::Consumer.new(api_key, api_secret, {:site => url})
 
     @access_token = OAuth::AccessToken.new(consumer, user_token, user_secret)
 
+    #this appears to be the most that linkedin will give back per request
+    @max_results = 20
 
   end
 
@@ -30,18 +34,20 @@ class LinkedinClient
     end
   end
 
-  def parseCompanyResult(result)
-    result['companies']['values'].each do |company|
-      @companyUrls[company['universalName']] = company['websiteUrl']
-    end
 
+  def parseCompanyResults(result)
+    results = Hash.new
+    result['companies']['values'].each do |company|
+      results[company['universalName']] = company['websiteUrl']
+    end
+    return results
   end
 
 
+  #test method, remove eventually
   def apiCallLinkedin
-    #url = "http://api.linkedin.com/v1/people-search:(people:(headline,first-name,last-name,positions,location:(name)),num-results)?title=software&current-title=true&facet=location%2Cus%3A84&format=json&count=500"
     url = "http://api.linkedin.com/v1/company-search:(companies:(universal-name,website-url,locations:(address:(city,state))),facets,num-results)?facet=location,us:84&facet=industry," <<
-        @industryCodes <<
+        @linkedin_tech_industry_codes <<
         "&format=json" <<
         "&start=" << @start <<
         "&count=" << @numberResults
@@ -52,5 +58,36 @@ class LinkedinClient
 
   end
 
+
+  def gather_company_data(start, number_to_collect, industry_codes)
+
+    request_num = number_to_collect
+    cnt = 0
+    div = number_to_collect / @max_results
+    if (div > 0)
+      div = 1
+    end
+
+    results = Hash.new
+
+    if (industry_codes == nil)
+      industry_codes = @linkedin_tech_industry_codes
+    end
+
+    while cnt < div do
+      url = "http://api.linkedin.com/v1/company-search:(companies:(universal-name,website-url,locations:(address:(city,state))),facets,num-results)?facet=location,us:84&facet=industry," <<
+          industry_codes <<
+          "&format=json" <<
+          "&start=" << (cnt * @max_results + 1).to_s <<
+          "&count=" << @max_results.to_s
+
+
+      json = @access_token.get(url)
+
+      results.merge(parseCompanyResults(json.body))
+      cnt = cnt + 1
+    end
+    s = ""
+  end
 
 end
