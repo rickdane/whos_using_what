@@ -27,18 +27,17 @@ class LinkedinClient
 
   end
 
-
-  def parse_person_result(result)
-
-    result['people']['values'].each do |person|
-      puts person['firstName'] + " " + person['lastName']
+  def add_json_to_map(key_field_name, raw_json_map, output_map)
+    raw_json_map.each do |value|
+      output_map[value[key_field_name]] = value
     end
   end
 
 
+=begin
   def parse_company_results(result)
     results = Hash.new
-    result['companies']['values'].each do |company|
+    result.each do |company|
       tmpHash = Hash.new
       tmpHash["url"]=company['websiteUrl']
       tmpHash["id"]= company["id"]
@@ -46,6 +45,7 @@ class LinkedinClient
     end
     return results
   end
+=end
 
 
   #todo this should be put into module for re-use
@@ -60,7 +60,7 @@ class LinkedinClient
 
     url = "http://api.linkedin.com/v1/people-search:(people,facets)?facet=location,us:" << location_code
 
-    parse_person_result(json_api_call_helper(url))
+    puts json_api_call_helper(url)['people']['values']
 
   end
 
@@ -90,11 +90,8 @@ class LinkedinClient
           "&start=" << (start * @max_results + 1).to_s <<
           "&count=" << @max_results.to_s
 
-      tmp_results = parse_company_results(json_api_call_helper(url))
-
-      tmp_results.each do |key, value|
-        results[key] = value
-      end
+      raw_json_map = json_api_call_helper(url)['companies']['values']
+      add_json_to_map("universalName", raw_json_map, results)
 
       cnt = cnt + 1
     end

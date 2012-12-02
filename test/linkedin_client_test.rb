@@ -14,9 +14,9 @@ class LinkedinClientTest
     query = "ruby"
 
     results.each do |key, value|
-      uses = search_client.search(query, value["url"])
+      uses = search_client.search(query, value["websiteUrl"])
       if (uses)
-        puts value["url"] << " probably uses " << query
+        puts value["universalName"] << " probably uses " << query
       else
       end
 
@@ -36,9 +36,9 @@ class LinkedinClientTest
     search_client = SearchClient.new
     linkedin_client = LinkedinClient.new(config["linkedin.api_key"], config["linkedin.api_secret"], config["linkedin.user_token"], config["linkedin.user_secret"], "http://linkedin.com")
 
-    #test_get_companies(linkedin_client, search_client)
+    test_get_companies(linkedin_client, search_client)
 
-    test_get_people(linkedin_client)
+    #test_get_people(linkedin_client)
 
 
   end
