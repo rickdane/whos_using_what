@@ -7,6 +7,7 @@ class LinkedinClient
   #the company industry codes to search for, see: https://developer.linkedin.com/documents/industry-codes
   attr :access_token, true
   attr :companyUrls
+  @@json_indicator = "format=json"
 
   include ConfigModule
 
@@ -27,7 +28,7 @@ class LinkedinClient
   end
 
 
-  def self.parsePersonResult(result)
+  def parse_person_result(result)
 
     result['people']['values'].each do |person|
       puts person['firstName'] + " " + person['lastName']
@@ -35,26 +36,31 @@ class LinkedinClient
   end
 
 
-  def parseCompanyResults(result)
+  def parse_company_results(result)
     results = Hash.new
     result['companies']['values'].each do |company|
-      results[company['universalName']] = company['websiteUrl']
+      tmpHash = Hash.new
+      tmpHash["url"]=company['websiteUrl']
+      tmpHash["id"]= company["id"]
+      results[company['universalName']] = tmpHash
     end
     return results
   end
 
 
-  #test method, remove eventually
-  def apiCallLinkedin
-    url = "http://api.linkedin.com/v1/company-search:(companies:(universal-name,website-url,locations:(address:(city,state))),facets,num-results)?facet=location,us:84&facet=industry," <<
-        @linkedin_tech_industry_codes <<
-        "&format=json" <<
-        "&start=" << @start <<
-        "&count=" << @numberResults
-
-    json = @access_token.get(url)
+  #todo this should be put into module for re-use
+  def json_api_call_helper (url)
+    json = @access_token.get(url + "&" << @@json_indicator)
 
     JSON.parse(json.body)
+  end
+
+  # this method searches for people from a specified company for a specific job type
+  def people_search_for_company (company_id, location_code)
+
+    url = "http://api.linkedin.com/v1/people-search:(people,facets)?facet=location,us:" << location_code
+
+    parse_person_result(json_api_call_helper(url))
 
   end
 
@@ -79,16 +85,12 @@ class LinkedinClient
     end
 
     while cnt < div do
-      url = "http://api.linkedin.com/v1/company-search:(companies:(universal-name,website-url,locations:(address:(city,state))),facets,num-results)?facet=location,us:84&facet=industry," <<
+      url = "http://api.linkedin.com/v1/company-search:(companies:(universal-name,id,website-url,locations:(address:(city,state))),facets,num-results)?facet=location,us:84&facet=industry," <<
           industry_codes <<
-          "&format=json" <<
           "&start=" << (start * @max_results + 1).to_s <<
           "&count=" << @max_results.to_s
 
-
-      json = @access_token.get(url)
-
-      tmp_results = parseCompanyResults(JSON.parse(json.body))
+      tmp_results = parse_company_results(json_api_call_helper(url))
 
       tmp_results.each do |key, value|
         results[key] = value
