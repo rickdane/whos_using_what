@@ -20,10 +20,11 @@ class LinkedinClientTest
     query = "ruby"
 
     results.each do |key, site|
-      uses = search_client.search(query, site)
-      if (uses)
+      uses = search_client.search("ruby", value)
+      if uses
         puts site << " probably uses " << query
       else
+
       end
 
       sleep 1

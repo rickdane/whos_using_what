@@ -82,7 +82,7 @@ class LinkedinClient
       url = "http://api.linkedin.com/v1/company-search:(companies:(universal-name,website-url,locations:(address:(city,state))),facets,num-results)?facet=location,us:84&facet=industry," <<
           industry_codes <<
           "&format=json" <<
-          "&start=" << (cnt * @max_results + 1).to_s <<
+          "&start=" << (start * @max_results + 1).to_s <<
           "&count=" << @max_results.to_s
 
 

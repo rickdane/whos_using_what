@@ -94,24 +94,21 @@ class SearchClient
       begin
         html = RestClient.get(cur_url)
         uses_technology = determineIfUsesTechnology(query, html)
+        at_least_one_nonexception_url = true
         if (uses_technology)
           isMatch = true
           break
         end
-        at_least_one_nonexception_url = true
-      rescue
+      rescue Exception => exception
+        #raise exception
       end
     end
 
-
-    if isMatch
-      puts site << " uses " << query
-    elsif   !at_least_one_nonexception_url
-      puts "site: " << site << " did not have any url's that didn't encounter an exception"
-    else
-      puts site << " does not use " << query
+    if (!at_least_one_nonexception_url)
+      return false
     end
 
+    return isMatch
   end
 
 end
