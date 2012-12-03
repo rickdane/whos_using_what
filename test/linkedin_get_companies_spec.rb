@@ -5,13 +5,13 @@ require 'yaml'
 
 describe LinkedinClient do
 
-  it "should return a blank instance" do
+  it "retrieves companies that might use ruby" do
     @config = YAML.load_file('config.yaml')
-    @@start = 0
+    @start = 0
     linkedin_client = LinkedinClient.new(@config["linkedin.api_key"], @config["linkedin.api_secret"], @config["linkedin.user_token"], @config["linkedin.user_secret"], "http://linkedin.com")
     search_client = SearchClient.new
 
-    results = linkedin_client.gather_company_data(@@start, nil, nil)
+    results = linkedin_client.gather_company_data(@start, nil, nil)
 
     query = "ruby"
 

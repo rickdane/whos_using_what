@@ -19,10 +19,10 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="linkedin_get_companies_spec.rb" pinned="false" current="true" current-in-tab="true">
+      <file leaf-file-name="linkedin_get_companies_spec.rb" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/test/linkedin_get_companies_spec.rb">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="15" column="23" selection-start="558" selection-end="558" vertical-scroll-proportion="0.62674093">
+            <state line="13" column="51" selection-start="529" selection-end="529" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
@@ -31,7 +31,25 @@
       <file leaf-file-name="linkedin_get_people_spec.rb" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/test/linkedin_get_people_spec.rb">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="6" column="12" selection-start="106" selection-end="106" vertical-scroll-proportion="0.0">
+            <state line="9" column="30" selection-start="395" selection-end="395" vertical-scroll-proportion="0.0">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="linkedin_client.rb" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/lib/whos_using_what/linkedin_client.rb">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="69" column="52" selection-start="1825" selection-end="1825" vertical-scroll-proportion="0.0">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="base_api_client.rb" pinned="false" current="true" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/lib/whos_using_what/base_api_client.rb">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="4" column="42" selection-start="114" selection-end="114" vertical-scroll-proportion="0.12345679">
               <folding />
             </state>
           </provider>
@@ -47,12 +65,10 @@
   <component name="IdeDocumentHistory">
     <option name="changedFiles">
       <list>
-        <option value="$PROJECT_DIR$/test/test_linkedin_client.rb" />
         <option value="$PROJECT_DIR$/lib/whos_using_what.rb" />
         <option value="$PROJECT_DIR$/test/config.yaml" />
         <option value="$PROJECT_DIR$/whos_using_what.gemspec" />
         <option value="$PROJECT_DIR$/lib/whos_using_what/search_client.rb" />
-        <option value="$PROJECT_DIR$/lib/whos_using_what/linkedin_client.rb" />
         <option value="$PROJECT_DIR$/test/step_definitions/linkedin_steps.rb" />
         <option value="$PROJECT_DIR$/test/fetures/step_definitions/linkedin_steps.rb" />
         <option value="$PROJECT_DIR$/test/features/step_definitions/test.feature" />
@@ -63,6 +79,8 @@
         <option value="$PROJECT_DIR$/test/linkedin_client_spec.rb" />
         <option value="$PROJECT_DIR$/test/linkedin_get_companies_spec.rb" />
         <option value="$PROJECT_DIR$/test/linkedin_get_people_spec.rb" />
+        <option value="$PROJECT_DIR$/lib/whos_using_what/linkedin_client.rb" />
+        <option value="$PROJECT_DIR$/lib/whos_using_what/base_api_client.rb" />
       </list>
     </option>
   </component>
@@ -300,7 +318,9 @@
       <RSPEC_RUN_CONFIG_SETTINGS_ID NAME="USE_CUSTOM_SPEC_RUNNER" VALUE="false" />
       <RSPEC_RUN_CONFIG_SETTINGS_ID NAME="DRB" VALUE="false" />
       <RSPEC_RUN_CONFIG_SETTINGS_ID NAME="FULL_BACKTRACE" VALUE="false" />
+      <RunnerSettings RunnerId="RubyDebugRunner" />
       <RunnerSettings RunnerId="RubyRunner" />
+      <ConfigurationWrapper RunnerId="RubyDebugRunner" />
       <ConfigurationWrapper RunnerId="RubyRunner" />
       <method />
     </configuration>
@@ -332,7 +352,9 @@
       <RSPEC_RUN_CONFIG_SETTINGS_ID NAME="USE_CUSTOM_SPEC_RUNNER" VALUE="false" />
       <RSPEC_RUN_CONFIG_SETTINGS_ID NAME="DRB" VALUE="false" />
       <RSPEC_RUN_CONFIG_SETTINGS_ID NAME="FULL_BACKTRACE" VALUE="false" />
+      <RunnerSettings RunnerId="RubyDebugRunner" />
       <RunnerSettings RunnerId="RubyRunner" />
+      <ConfigurationWrapper RunnerId="RubyDebugRunner" />
       <ConfigurationWrapper RunnerId="RubyRunner" />
       <method />
     </configuration>
@@ -528,11 +550,11 @@
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32945737" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="true" content_ui="tabs" />
-      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.21750842" sideWeight="0.51808786" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.21750842" sideWeight="0.6653747" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.39276487" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.48191214" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.33462533" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
@@ -604,7 +626,15 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" type="ruby-line">
           <url>file://$PROJECT_DIR$/test/linkedin_get_companies_spec.rb</url>
-          <line>10</line>
+          <line>15</line>
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="ruby-line">
+          <url>file://$PROJECT_DIR$/lib/whos_using_what/linkedin_client.rb</url>
+          <line>99</line>
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="ruby-line">
+          <url>file://$PROJECT_DIR$/lib/whos_using_what/linkedin_client.rb</url>
+          <line>53</line>
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
@@ -664,13 +694,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/lib/whos_using_what/linkedin_client.rb">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="14" column="0" selection-start="301" selection-end="301" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/lib/whos_using_what/search_client.rb">
       <provider selected="true" editor-type-id="text-editor">
         <state line="91" column="53" selection-start="1812" selection-end="1812" vertical-scroll-proportion="2.6460395">
@@ -692,16 +715,30 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/test/linkedin_get_people_spec.rb">
+    <entry file="file://$PROJECT_DIR$/test/linkedin_get_companies_spec.rb">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="6" column="12" selection-start="106" selection-end="106" vertical-scroll-proportion="0.0">
+        <state line="13" column="51" selection-start="529" selection-end="529" vertical-scroll-proportion="0.0">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/test/linkedin_get_companies_spec.rb">
+    <entry file="file://$PROJECT_DIR$/test/linkedin_get_people_spec.rb">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="15" column="23" selection-start="558" selection-end="558" vertical-scroll-proportion="0.62674093">
+        <state line="9" column="30" selection-start="395" selection-end="395" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/lib/whos_using_what/linkedin_client.rb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="69" column="52" selection-start="1825" selection-end="1825" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/lib/whos_using_what/base_api_client.rb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="4" column="42" selection-start="114" selection-end="114" vertical-scroll-proportion="0.12345679">
           <folding />
         </state>
       </provider>

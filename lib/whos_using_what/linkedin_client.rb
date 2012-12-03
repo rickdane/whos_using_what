@@ -1,8 +1,9 @@
 require 'oauth'
 require 'json'
 require_relative 'config_module'
+require_relative 'base_api_client'
 
-class LinkedinClient
+class LinkedinClient < BaseApiClient
 
   #the company industry codes to search for, see: https://developer.linkedin.com/documents/industry-codes
   attr :access_token, true
@@ -50,17 +51,23 @@ class LinkedinClient
 
   #todo this should be put into module for re-use
   def json_api_call_helper (url)
-    json = @access_token.get(url + "&" << @@json_indicator)
+    json = @access_token.get(url << "&" << @@json_indicator)
 
     JSON.parse(json.body)
   end
 
   # this method searches for people from a specified company for a specific job type
-  def people_search_for_company (company_id, location_code)
+  def people_search_for_company ( location_code, title, company_name)
 
-    url = "http://api.linkedin.com/v1/people-search:(people,facets)?facet=location,us:" << location_code
+    params = Hash.new
+    params["facet"] = "location,us:" <<location_code
+    params["current-company"]= "true"
+    params["title"]=title
+    params["company-name"] = company_name
 
-    puts json_api_call_helper(url)['people']['values']
+    base_url = "http://api.linkedin.com/v1/people-search:(people,facets)"
+
+    puts json_api_call_helper(prepare_params_from_map_helper(base_url,params))['people']['values']
 
   end
 
