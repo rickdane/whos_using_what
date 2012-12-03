@@ -50,24 +50,25 @@ class LinkedinClient < BaseApiClient
 
 
   #todo this should be put into module for re-use
-  def json_api_call_helper (url)
+  def json_api_call_helper (base_url, params)
+    url = prepare_params_from_map_helper(base_url, params)
     json = @access_token.get(url << "&" << @@json_indicator)
 
     JSON.parse(json.body)
   end
 
   # this method searches for people from a specified company for a specific job type
-  def people_search_for_company ( location_code, title, company_name)
+  def people_search_for_company (location_code, title, company_name)
 
     params = Hash.new
-    params["facet"] = "location,us:" <<location_code
+    params["facet=location"] = "us:" <<location_code
     params["current-company"]= "true"
     params["title"]=title
     params["company-name"] = company_name
 
     base_url = "http://api.linkedin.com/v1/people-search:(people,facets)"
 
-    puts json_api_call_helper(prepare_params_from_map_helper(base_url,params))['people']['values']
+    puts json_api_call_helper(base_url, params)['people']['values']
 
   end
 
@@ -92,12 +93,15 @@ class LinkedinClient < BaseApiClient
     end
 
     while cnt < div do
-      url = "http://api.linkedin.com/v1/company-search:(companies:(universal-name,id,website-url,locations:(address:(city,state))),facets,num-results)?facet=location,us:84&facet=industry," <<
-          industry_codes <<
-          "&start=" << (start * @max_results + 1).to_s <<
-          "&count=" << @max_results.to_s
+      base_url = "http://api.linkedin.com/v1/company-search:(companies:(universal-name,id,website-url,locations:(address:(city,state))),facets,num-results)"
 
-      raw_json_map = json_api_call_helper(url)['companies']['values']
+      params = Hash.new
+      params["start"] = (start * @max_results + 1).to_s
+      params["count"] =  @max_results.to_s
+      params["facet=location"] =   "us:84"
+      params["facet=industry"]  = industry_codes
+
+      raw_json_map = json_api_call_helper(base_url, params)['companies']['values']
       add_json_to_map("universalName", raw_json_map, results)
 
       cnt = cnt + 1
