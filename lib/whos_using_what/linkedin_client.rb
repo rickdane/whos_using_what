@@ -35,20 +35,6 @@ class LinkedinClient < BaseApiClient
   end
 
 
-=begin
-  def parse_company_results(result)
-    results = Hash.new
-    result.each do |company|
-      tmpHash = Hash.new
-      tmpHash["url"]=company['websiteUrl']
-      tmpHash["id"]= company["id"]
-      results[company['universalName']] = tmpHash
-    end
-    return results
-  end
-=end
-
-
   #todo this should be put into module for re-use
   def json_api_call_helper (base_url, params)
     url = prepare_params_from_map_helper(base_url, params)
