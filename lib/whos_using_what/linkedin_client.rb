@@ -52,7 +52,7 @@ class LinkedinClient < BaseApiClient
     params["title"]=title
     params["company-name"] = company_name
 
-    base_url = "http://api.linkedin.com/v1/people-search:(people,facets)"
+    base_url = "http://api.linkedin.com/v1/people-search:(people:(id,first-name,headline,positions:(company:(name)),public-profile-url,last-name,picture-url),facets)"
 
     puts json_api_call_helper(base_url, params)['people']['values']
 
