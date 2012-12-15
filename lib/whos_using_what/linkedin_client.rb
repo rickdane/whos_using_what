@@ -2,6 +2,7 @@ require 'oauth'
 require 'json'
 require_relative 'config_module'
 require_relative 'base_api_client'
+require "../../lib/util/convert_ruby_map_to_api_syntax"
 
 class LinkedinClient < BaseApiClient
 
@@ -78,10 +79,12 @@ class LinkedinClient < BaseApiClient
                                 }, 'public-profile-url', 'last-name', 'picture-url']
             }, ' facets']
         }
-    }
+        }
+
+    Converter.convert_ruby_object_to_api_syntax linkedin_select_query
 
 
-    puts json_api_call_helper(base_url, params)['people']['values']
+  #  puts json_api_call_helper(base_url, params)['people']['values']
 
   end
 
