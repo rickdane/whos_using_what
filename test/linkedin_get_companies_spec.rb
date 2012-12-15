@@ -6,9 +6,9 @@ require 'yaml'
 describe LinkedinClient do
 
   it "retrieves companies that might use ruby" do
-    @config = YAML.load_file('config.yaml')
+    @li_config = YAML.load_file('config.yaml')
     @start = 0
-    linkedin_client = LinkedinClient.new(@config["linkedin.api_key"], @config["linkedin.api_secret"], @config["linkedin.user_token"], @config["linkedin.user_secret"], "http://linkedin.com")
+    linkedin_client = LinkedinClient.new(@li_config["linkedin.api_key"], @li_config["linkedin.api_secret"], @li_config["linkedin.user_token"], @li_config["linkedin.user_secret"], "http://linkedin.com")
     search_client = SearchClient.new
 
     results = linkedin_client.gather_company_data(@start, nil, nil)

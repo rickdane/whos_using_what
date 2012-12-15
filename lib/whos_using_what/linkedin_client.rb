@@ -9,6 +9,8 @@ class LinkedinClient < BaseApiClient
   attr :access_token, true
   attr :companyUrls
   @@json_indicator = "format=json"
+  @@base_url = "http://api.linkedin.com/v1/"
+  @@default_location_code = "84"
 
   include ConfigModule
 
@@ -35,6 +37,18 @@ class LinkedinClient < BaseApiClient
   end
 
 
+  def query_companies
+
+    params = Hash.new
+    params["facet=location"] = "us:" << @@default_location_code
+
+    base_url = @@base_url << "company-search:(companies:(id,name,universal-name,website-url,industries,status,logo-url,blog-rss-url,twitter-id,employee-count-range,specialties,locations,description,stock-exchange,founded-year,end-year,num-followers))="
+
+    puts json_api_call_helper(base_url, params)
+
+  end
+
+
   #todo this should be put into module for re-use
   def json_api_call_helper (base_url, params)
     url = prepare_params_from_map_helper(base_url, params)
@@ -52,7 +66,16 @@ class LinkedinClient < BaseApiClient
     params["title"]=title
     params["company-name"] = company_name
 
-    base_url = "http://api.linkedin.com/v1/people-search:(people:(id,first-name,headline,positions:(company:(name)),public-profile-url,last-name,picture-url),facets)"
+    base_url =
+        @@base_url
+
+    linkedin_select_query =
+
+        {"people-search:" => {
+            "(people:" => ['id', 'first-name', 'headline',
+                           {'positions' => [{'company' => ['name']}, 'public-profile-url', 'last-name', 'picture-url']},
+                           ' facets']}
+
 
     puts json_api_call_helper(base_url, params)['people']['values']
 
@@ -83,9 +106,9 @@ class LinkedinClient < BaseApiClient
 
       params = Hash.new
       params["start"] = (start * @max_results + 1).to_s
-      params["count"] =  @max_results.to_s
-      params["facet=location"] =   "us:84"
-      params["facet=industry"]  = industry_codes
+      params["count"] = @max_results.to_s
+      params["facet=location"] = "us:84"
+      params["facet=industry"] = industry_codes
 
       raw_json_map = json_api_call_helper(base_url, params)['companies']['values']
       add_json_to_map("universalName", raw_json_map, results)

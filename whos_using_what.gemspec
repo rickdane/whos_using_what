@@ -14,6 +14,8 @@ Gem::Specification.new do |s|
   s.add_dependency("rest-client")
   s.add_dependency("rake")
   s.add_dependency("rspec")
+  s.add_dependency("uri")
+  s.add_dependency("mongo")
   s.homepage    =
       'http://rubygems.org/gems/whos_using_what'
 end
