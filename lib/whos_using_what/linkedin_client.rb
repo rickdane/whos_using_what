@@ -29,12 +29,6 @@ class LinkedinClient < BaseApiClient
 
   end
 
-  def add_json_to_map(key_field_name, raw_json_map, output_map)
-    raw_json_map.each do |value|
-      output_map[value[key_field_name]] = value
-    end
-  end
-
 
   def query_companies params
 
@@ -74,41 +68,5 @@ class LinkedinClient < BaseApiClient
     JSON.parse(json.body)
   end
 
-
-  def gather_company_data(start, number_to_collect, industry_codes)
-
-    if number_to_collect == nil
-      number_to_collect = 20
-    end
-
-    request_num = number_to_collect
-    cnt = 0
-    div = number_to_collect / @max_results
-    if (div <1)
-      div = 1
-    end
-
-    results = Hash.new
-
-    if (industry_codes == nil)
-      industry_codes = @linkedin_tech_industry_codes
-    end
-
-    while cnt < div do
-      base_url = "http://api.linkedin.com/v1/company-search:(companies:(universal-name,id,website-url,locations:(address:(city,state))),facets,num-results)"
-
-      params = Hash.new
-      params["start"] = (start * @max_results + 1).to_s
-      params["count"] = @max_results.to_s
-      params["facet=location"] = "us:84"
-      params["facet=industry"] = industry_codes
-
-      raw_json_map = json_api_call_helper(base_url, params)['companies']['values']
-      add_json_to_map("universalName", raw_json_map, results)
-
-      cnt = cnt + 1
-    end
-    results
-  end
 
 end
