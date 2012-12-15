@@ -12,6 +12,8 @@ class GatherCompanies
 
     @@mongo_client = MongoHelper.get_mongo_connection
 
+    @@companies_coll = @@mongo_client['companies']
+
     @li_config = YAML.load_file(File.expand_path("../../whos_using_what/config/linkedin.env", __FILE__))
 
     ENV["mongo.host"]= @li_config["mongo.host"]
@@ -20,19 +22,24 @@ class GatherCompanies
 
     cnt = 1
     num_iterations = 5
-    numresults=10
     cur_start_position = 0
+    increment = 20
 
     while cnt <= num_iterations do
       puts cur_start_position.to_s
 
-      puts @@linkedin_client.query_companies ({
-          "start" => cur_start_position.to_s << "&count=5",
+      resp = @@linkedin_client.query_companies ({
+          "start" => cur_start_position.to_s << "&count=" << increment.to_s,
           "facet=industry" => @linkedin_tech_industry_codes,
           "locations:(address:(postal-code))" => "95688"
       })
+      docs = resp['companies'].values[3]
+      docs.each do |doc|
+        @@companies_coll.insert(doc)
+      end
 
-      cur_start_position = cnt + numresults
+
+      cur_start_position = cur_start_position + increment
 
       cnt = cnt + 1
 

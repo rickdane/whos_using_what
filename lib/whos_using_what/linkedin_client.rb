@@ -44,7 +44,6 @@ class LinkedinClient < BaseApiClient
   end
 
 
-  #todo this should be put into module for re-use
   def json_api_call_helper (base_url, params)
 
     url = prepare_params_from_map_helper(base_url, params)
@@ -57,6 +56,7 @@ class LinkedinClient < BaseApiClient
     json = @access_token.get(url << "&" << @@json_indicator)
 
     JSON.parse(json.body)
+
   end
 
 
