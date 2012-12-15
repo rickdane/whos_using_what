@@ -21,8 +21,8 @@ class GatherCompanies
     @@linkedin_client = LinkedinClient.new @li_config["api_key"], @li_config["api_secret"], @li_config["user_token"], @li_config["user_secret"], @li_config["url"]
 
     cnt = 1
-    num_iterations = 5
-    cur_start_position = 0
+    num_iterations = 200
+    cur_start_position = 220
     increment = 20
 
     while cnt <= num_iterations do
@@ -42,6 +42,10 @@ class GatherCompanies
       cur_start_position = cur_start_position + increment
 
       cnt = cnt + 1
+
+      sleep_seconds = rand(1-17)
+      puts "sleeping for: " << sleep_seconds.to_s << " seconds"
+      sleep(sleep_seconds)
 
     end
 
