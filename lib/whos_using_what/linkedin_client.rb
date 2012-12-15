@@ -5,11 +5,8 @@ require_relative 'base_api_client'
 
 class LinkedinClient < BaseApiClient
 
-  #the company industry codes to search for, see: https://developer.linkedin.com/documents/industry-codes
-  attr :access_token, true
-  attr :companyUrls
+
   @@json_indicator = "format=json"
-  @@default_location_code = "84"
 
   include ConfigModule
 
@@ -17,15 +14,9 @@ class LinkedinClient < BaseApiClient
   def initialize(api_key, api_secret, user_token, user_secret, url)
     super()
 
-    @numberResults = "5"
-    @start = "15"
-
     consumer = OAuth::Consumer.new(api_key, api_secret, {:site => url})
 
     @access_token = OAuth::AccessToken.new(consumer, user_token, user_secret)
-
-    #this appears to be the most that linkedin will give back per request
-    @max_results = 20
 
   end
 
