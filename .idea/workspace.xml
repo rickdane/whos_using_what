@@ -40,7 +40,7 @@
       <file leaf-file-name="geo_tagger.rb" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/lib/whos_using_what/data_gatherers/geo_tagger.rb">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="70" column="56" selection-start="1429" selection-end="1429" vertical-scroll-proportion="0.63829786">
+            <state line="215" column="13" selection-start="4296" selection-end="4296" vertical-scroll-proportion="0.7887324">
               <folding />
             </state>
           </provider>
@@ -49,7 +49,7 @@
       <file leaf-file-name="linkedin_client.rb" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/lib/whos_using_what/linkedin_client.rb">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="44" column="23" selection-start="817" selection-end="817" vertical-scroll-proportion="0.0">
+            <state line="50" column="0" selection-start="926" selection-end="1051" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
@@ -386,17 +386,17 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="65" y="24" width="1537" height="905" extended-state="0" />
-    <editor active="false" />
+    <editor active="true" />
     <layout>
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="true" content_ui="tabs" />
-      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.21212122" sideWeight="0.7661499" order="0" side_tool="false" content_ui="combo" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.46899223" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.21212122" sideWeight="0.5878553" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.4121447" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.23385014" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.41860464" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
@@ -462,11 +462,6 @@
         <line-breakpoint enabled="true" type="ruby-line">
           <url>file://$PROJECT_DIR$/lib/whos_using_what/gather_companies.rb</url>
           <line>41</line>
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="ruby-line">
-          <condition>zip_code == '98104'</condition>
-          <url>file://$PROJECT_DIR$/lib/whos_using_what/data_gatherers/geo_tagger.rb</url>
-          <line>29</line>
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
@@ -541,9 +536,16 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/lib/whos_using_what/gather_companies.rb">
+    <entry file="file://$APPLICATION_HOME_DIR$/rubystubs193/proc.rb">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="33" column="1" selection-start="1067" selection-end="1212" vertical-scroll-proportion="0.0">
+        <state line="67" column="8" selection-start="2642" selection-end="2642" vertical-scroll-proportion="0.33173078">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/lib/whos_using_what/linkedin_client.rb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="50" column="0" selection-start="926" selection-end="1051" vertical-scroll-proportion="0.0">
           <folding />
         </state>
       </provider>
@@ -555,23 +557,16 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$APPLICATION_HOME_DIR$/rubystubs193/proc.rb">
+    <entry file="file://$PROJECT_DIR$/lib/whos_using_what/gather_companies.rb">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="67" column="8" selection-start="2642" selection-end="2642" vertical-scroll-proportion="0.33173078">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/lib/whos_using_what/linkedin_client.rb">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="44" column="23" selection-start="817" selection-end="817" vertical-scroll-proportion="0.0">
+        <state line="33" column="1" selection-start="1067" selection-end="1212" vertical-scroll-proportion="0.0">
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/lib/whos_using_what/data_gatherers/geo_tagger.rb">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="70" column="56" selection-start="1429" selection-end="1429" vertical-scroll-proportion="0.63829786">
+        <state line="215" column="13" selection-start="4296" selection-end="4296" vertical-scroll-proportion="0.7887324">
           <folding />
         </state>
       </provider>
