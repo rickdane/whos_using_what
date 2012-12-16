@@ -21,8 +21,8 @@ class GatherCompanies
     @@linkedin_client = LinkedinClient.new @li_config["api_key"], @li_config["api_secret"], @li_config["user_token"], @li_config["user_secret"], @li_config["url"]
 
     cnt = 1
-    num_iterations = 200
-    cur_start_position = 220
+    num_iterations = 700
+    cur_start_position = 6820
     increment = 20
 
     while cnt <= num_iterations do
@@ -34,16 +34,18 @@ class GatherCompanies
           "locations:(address:(postal-code))" => "95688"
       })
       docs = resp['companies'].values[3]
-      docs.each do |doc|
-        @@companies_coll.insert(doc)
+      if docs != nil
+        docs.each do |doc|
+          puts doc
+          @@companies_coll.insert(doc)
+        end
       end
-
 
       cur_start_position = cur_start_position + increment
 
       cnt = cnt + 1
 
-      sleep_seconds = rand(1-17)
+      sleep_seconds = rand(1-35)
       puts "sleeping for: " << sleep_seconds.to_s << " seconds"
       sleep(sleep_seconds)
 
