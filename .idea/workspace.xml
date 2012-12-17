@@ -40,7 +40,7 @@
       <file leaf-file-name="geo_tagger.rb" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/lib/whos_using_what/data_gatherers/geo_tagger.rb">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="210" column="5" selection-start="4317" selection-end="4317" vertical-scroll-proportion="0.3478261">
+            <state line="99" column="0" selection-start="2252" selection-end="2252" vertical-scroll-proportion="-4.180365">
               <folding />
             </state>
           </provider>
@@ -120,6 +120,7 @@
       <sortByType />
     </navigator>
     <panes>
+      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -194,18 +195,17 @@
           </PATH>
         </subPane>
       </pane>
-      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
     <property name="options.splitter.main.proportions" value="0.3" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="options.lastSelected" value="org.jetbrains.plugins.ruby.settings.RubyIdeSdkConfigurable" />
     <property name="recentsLimit" value="5" />
-    <property name="restartRequiresConfirmation" value="true" />
+    <property name="options.lastSelected" value="org.jetbrains.plugins.ruby.settings.RubyIdeSdkConfigurable" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$/../whos_using_what_web" />
-    <property name="options.searchVisible" value="true" />
+    <property name="restartRequiresConfirmation" value="true" />
     <property name="options.splitter.details.proportions" value="0.2" />
+    <property name="options.searchVisible" value="true" />
   </component>
   <component name="RunManager" selected="Ruby.geo_tagger">
     <configuration default="false" name="gather_companies" type="RubyRunConfigurationType" factoryName="Ruby" temporary="true">
@@ -401,8 +401,8 @@
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="true" content_ui="tabs" />
-      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.21548821" sideWeight="0.48320413" order="0" side_tool="false" content_ui="combo" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.5167959" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.21885522" sideWeight="0.60335916" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.39664084" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.27131784" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
@@ -474,19 +474,15 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" type="ruby-line">
           <url>file://$PROJECT_DIR$/lib/whos_using_what/data_gatherers/geo_tagger.rb</url>
-          <line>66</line>
+          <line>230</line>
         </line-breakpoint>
         <line-breakpoint enabled="true" type="ruby-line">
           <url>file://$PROJECT_DIR$/lib/whos_using_what/data_gatherers/geo_tagger.rb</url>
-          <line>150</line>
+          <line>226</line>
         </line-breakpoint>
         <line-breakpoint enabled="true" type="ruby-line">
           <url>file://$PROJECT_DIR$/lib/whos_using_what/data_gatherers/geo_tagger.rb</url>
-          <line>152</line>
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="ruby-line">
-          <url>file://$PROJECT_DIR$/lib/whos_using_what/data_gatherers/geo_tagger.rb</url>
-          <line>214</line>
+          <line>99</line>
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
@@ -577,7 +573,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/lib/whos_using_what/data_gatherers/geo_tagger.rb">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="210" column="5" selection-start="4317" selection-end="4317" vertical-scroll-proportion="0.3478261">
+        <state line="99" column="0" selection-start="2252" selection-end="2252" vertical-scroll-proportion="-4.180365">
           <folding />
         </state>
       </provider>
