@@ -3,12 +3,11 @@ require "rest-client"
 
 class GeoTagger
 
-  def initialize
-    @@mongo_client = MongoHelper.get_mongo_connection
-    @@companies_coll = @@mongo_client['companies']
-    @@coords_coll = @@mongo_client['coordinates']
-    @@key = ""
-  end
+  @@mongo_client = MongoHelper.get_mongo_connection
+  @@companies_coll = @@mongo_client['companies']
+  @@coords_coll = @@mongo_client['coordinates']
+  @@key = ""
+
 
   #doc_key = nil && doc=nil to return the end value instead of to add it to the doc
   def self.safe_extract keys_arr, map, doc_key, doc
@@ -99,16 +98,15 @@ class GeoTagger
 
 
       if (doc.size > 1 && doc[:country] == "US")
-        coll = @@coordinates_coll.find(zip: zip_code).to_a
+        coll = @@coords_coll.find(zip: zip_code).to_a
       end
 
       if coll && coll.size < 1
 
 
-        @@coordinates_coll.insert(doc)
+        @@coords_coll.insert(doc)
 
       end
-
     }
 
   end
@@ -130,11 +128,6 @@ class GeoTagger
   end
 
   def self.load_geolocations_into_db
-
-
-    @@coordinates_coll = @@mongo_client['coordinates']
-
-    @companies_coll = @@mongo_client["companies"]
 
     @companies_coll.find().to_a.each do |company|
 
@@ -177,10 +170,6 @@ class GeoTagger
   end
 
   def self.update_companies_with_latitude_longitude
-
-    @@coordinates_coll = @@mongo_client['coordinates']
-
-    @companies_coll = @@mongo_client["companies"]
 
     @companies_coll.find().to_a.each do |company|
 
@@ -236,8 +225,6 @@ class GeoTagger
 
   if __FILE__ == $PROGRAM_NAME
 
-    #seems to be needed to initialize class variables TODO look into this more
-    GeoTagger.new
 
 =begin
     @@mongo_client = MongoHelper.get_mongo_connection
@@ -256,7 +243,7 @@ class GeoTagger
 
     #near = geospatial_search -122.4099154, 37.8059887
 
-    near = zip_code_search "95688"
+    near = GeoTagger.zip_code_search "95688"
 
     s = ""
 
