@@ -3,10 +3,12 @@ require "rest-client"
 
 class GeoTagger
 
-  @@mongo_client = MongoHelper.get_mongo_connection
-  @@companies_coll = @@mongo_client['companies']
-  @@coords_coll = @@mongo_client['coordinates']
-  @@key = ""
+  def initialize
+    @@mongo_client = MongoHelper.get_mongo_connection
+    @@companies_coll = @@mongo_client['companies']
+    @@coords_coll = @@mongo_client['coordinates']
+    @@key = ""
+  end
 
   #doc_key = nil && doc=nil to return the end value instead of to add it to the doc
   def self.safe_extract keys_arr, map, doc_key, doc
@@ -233,6 +235,9 @@ class GeoTagger
   end
 
   if __FILE__ == $PROGRAM_NAME
+
+    #seems to be needed to initialize class variables TODO look into this more
+    GeoTagger.new
 
 =begin
     @@mongo_client = MongoHelper.get_mongo_connection
