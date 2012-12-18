@@ -1,5 +1,6 @@
-require 'lib/whos_using_what/data_gatherers/geo_tagger'
-require 'lib/whos_using_what/data_searchers/companies_searcher'
+
+require '../lib/whos_using_what/data_gatherers/geo_tagger'
+require '../lib/whos_using_what/data_searchers/companies_searcher'
 
 
 if __FILE__ == $PROGRAM_NAME

@@ -1,5 +1,6 @@
-require '../../whos_using_what/no_sql/mongo_helper'
-require 'lib/util/map_data_extraction_util'
+require_relative '../../whos_using_what/no_sql/mongo_helper'
+require_relative '../../util/map_data_extraction_util'
+require_relative '../../whos_using_what/api_clients/google_locations_client'
 
 require "rest-client"
 

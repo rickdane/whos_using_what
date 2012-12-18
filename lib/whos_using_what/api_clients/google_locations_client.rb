@@ -1,4 +1,4 @@
-require 'lib/util/map_data_extraction_util'
+require_relative '../../util/map_data_extraction_util'
 
 class GoogleLocationsClient
 
