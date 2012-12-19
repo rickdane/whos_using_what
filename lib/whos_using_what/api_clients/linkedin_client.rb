@@ -1,14 +1,11 @@
 require 'oauth'
 require 'json'
-require_relative 'config_module'
-require_relative 'base_api_client'
+require 'base_api_client'
 
 class LinkedinClient < BaseApiClient
 
 
   @@json_indicator = "format=json"
-
-  include ConfigModule
 
 
   def initialize(api_key, api_secret, user_token, user_secret, url)

@@ -1,12 +1,10 @@
+require 'mongo_helper'
+require 'linkedin_client'
+
 #meant to be able to be used as long-running process to save company data to DB
-
-require '../whos_using_what/no_sql/mongo_helper'
-require_relative 'linkedin_client'
-
 class GatherCompanies
 
-
-  if __FILE__ == $PROGRAM_NAME
+  def initialize
 
     @linkedin_tech_industry_codes = "4,132,6,96,113";
 
@@ -14,14 +12,17 @@ class GatherCompanies
 
     @@companies_coll = @@mongo_client['companies']
 
-    @li_config = YAML.load_file(File.expand_path("../../whos_using_what/config/linkedin.env", __FILE__))
+    @li_config = YAML.load_file(File.expand_path("../../config/linkedin.env", __FILE__))
 
     @@linkedin_client = LinkedinClient.new @li_config["api_key"], @li_config["api_secret"], @li_config["user_token"], @li_config["user_secret"], @li_config["url"]
 
-    cnt = 1
-    num_iterations = 700
-    cur_start_position = 6820
+
+  end
+
+  def load_companies_to_db num_iterations, cur_start_position
+
     increment = 20
+    cnt = 1
 
     while cnt <= num_iterations do
       puts cur_start_position.to_s
@@ -48,9 +49,6 @@ class GatherCompanies
       sleep(sleep_seconds)
 
     end
-
-
   end
-
 
 end
