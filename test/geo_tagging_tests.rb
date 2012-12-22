@@ -26,16 +26,14 @@ if __FILE__ == $PROGRAM_NAME
 
   log.info "begin geo-tagging tests"
 
-  #geo_tagger.load_geolocations_into_db
+  geo_tagger.load_geolocations_into_db
 
-  geo_tagger.update_companies_with_latitude_longitude
+  #geo_tagger.update_companies_with_latitude_longitude
 
   #near = companies_searcher.geospatial_search -122.4099154, 37.8059887
 
-=begin
   near = companies_searcher.zip_code_search "95688"
 
   puts near
-=end
 
 end

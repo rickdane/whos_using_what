@@ -1,5 +1,6 @@
 class CompaniesSearcher
 
+  #geo_tagger = instance of GeoTagger
   def initialize geo_tagger
 
     @mongo_client = MongoHelper.get_mongo_connection
@@ -21,11 +22,7 @@ class CompaniesSearcher
     zip_doc = @coords_coll.find_one({:zip => zip_code})
     if zip_doc == nil
 
-      #todo consider making a method in GeoTagger class to do this instead of using closure directly here
-      #todo need to figure out how to call this from other class
-      closure = @geo_tagger.process_zip_closure zip_code
-
-      closure.call
+      @geo_tagger.insert_new_zip_entry zip_code
 
     end
     zip_doc = @coords_coll.find_one({:zip => zip_code})
