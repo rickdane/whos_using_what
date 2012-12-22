@@ -19,6 +19,7 @@ class CompaniesSearcher
   end
 
   def zip_code_search zip_code
+
     zip_doc = @coords_coll.find_one({:zip => zip_code})
     if zip_doc == nil
 

@@ -82,7 +82,6 @@ class GeoTagger
           end
         }
 
-
         process_zip_closure.call
       rescue Exception => e
         puts e.message
