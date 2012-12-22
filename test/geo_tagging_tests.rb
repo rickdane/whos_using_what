@@ -14,11 +14,11 @@ require 'logger_factory'
 
 if __FILE__ == $PROGRAM_NAME
 
-  geo_tagger = GeoTagger.new
-  gather_companies = GatherCompanies.new
-  companies_searcher = CompaniesSearcher.new
+  log = LoggerFactory.get_default_logger
 
-   log = LoggerFactory.get_default_logger
+  geo_tagger = GeoTagger.new log
+  gather_companies = GatherCompanies.new
+  companies_searcher = CompaniesSearcher.new geo_tagger
 
 
   #todo run in different threads

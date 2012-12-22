@@ -6,7 +6,8 @@ require "rest-client"
 
 class GeoTagger
 
-  def initialize
+  def initialize log
+    @log = log
     @mongo_client = MongoHelper.get_mongo_connection
     @companies_coll = @mongo_client['companies']
     @coords_coll = @mongo_client['coordinates']
@@ -120,6 +121,8 @@ class GeoTagger
   end
 
   def update_companies_with_latitude_longitude
+
+    @log.info "beginning updating of companies with latitude and longitude data"
 
     @companies_coll.find().to_a.each do |company|
 

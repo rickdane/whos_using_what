@@ -1,12 +1,12 @@
 class CompaniesSearcher
 
-  def initialize
+  def initialize geo_tagger
 
     @mongo_client = MongoHelper.get_mongo_connection
     @companies_coll = @mongo_client['companies']
     @coords_coll = @mongo_client['coordinates']
 
-    @geo_tagger = GeoTagger.new
+    @geo_tagger = geo_tagger
 
   end
 
