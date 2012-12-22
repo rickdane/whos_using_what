@@ -22,47 +22,6 @@ class GeoTagger
   end
 
 
-  def process_zip_closure zip_code
-    lambda {
-
-      resp_map = @locations_client.api_get_google_location_data zip_code
-
-      doc = {}
-
-
-      doc[:zip] = zip_code
-
-      coords = @locations_client.get_coords_from_google_location_resp_helper resp_map
-      if coords[0] && coords[1]
-        doc[:loc] = {"lon" => coords[0], "lat" => coords[1]}
-      end
-
-
-      keys_arr = ["AddressDetails", "Country", "AdministrativeArea", "Locality", "LocalityName"]
-      MapDataExtractionUtil.safe_extract_helper keys_arr, resp_map, :city, doc
-
-      keys_arr = ["AddressDetails", "Country", "AdministrativeArea", "AdministrativeAreaName"]
-      MapDataExtractionUtil.safe_extract_helper keys_arr, resp_map, :state, doc
-
-      keys_arr = ["AddressDetails", "Country", "CountryNameCode"]
-      MapDataExtractionUtil.safe_extract_helper keys_arr, resp_map, :country, doc
-
-
-      if (doc.size > 1 && doc[:country] == "US")
-        coll = @coords_coll.find(zip: zip_code).to_a
-      end
-
-      if coll && coll.size < 1
-
-
-        @coords_coll.insert(doc)
-
-      end
-    }
-
-  end
-
-
   def zip_acceptance_predicate zip_code
 
     if !zip_code
@@ -111,11 +70,48 @@ class GeoTagger
 
           begin
             #todo figure how to do this now that we are using instance variables instead of class variables
-            closure = GeoTagger.process_zip_closure zip_code
+            process_zip_closure = lambda {
 
-            closure.call
+              resp_map = @locations_client.api_get_google_location_data zip_code
+
+              doc = {}
+
+
+              doc[:zip] = zip_code
+
+              coords = @locations_client.get_coords_from_google_location_resp_helper resp_map
+              if coords[0] && coords[1]
+                doc[:loc] = {"lon" => coords[0], "lat" => coords[1]}
+              end
+
+
+              keys_arr = ["AddressDetails", "Country", "AdministrativeArea", "Locality", "LocalityName"]
+              MapDataExtractionUtil.safe_extract_helper keys_arr, resp_map, :city, doc
+
+              keys_arr = ["AddressDetails", "Country", "AdministrativeArea", "AdministrativeAreaName"]
+              MapDataExtractionUtil.safe_extract_helper keys_arr, resp_map, :state, doc
+
+              keys_arr = ["AddressDetails", "Country", "CountryNameCode"]
+              MapDataExtractionUtil.safe_extract_helper keys_arr, resp_map, :country, doc
+
+
+              if (doc.size > 1 && doc[:country] == "US")
+                coll = @coords_coll.find(zip: zip_code).to_a
+              end
+
+              if coll && coll.size < 1
+
+
+                @coords_coll.insert(doc)
+
+              end
+            }
+
+
+            process_zip_closure.call
           rescue Exception => e
-            puts zip_code
+            puts e.message
+            puts e.backtrace
 
           end
         end
@@ -138,7 +134,7 @@ class GeoTagger
 
           if zip
 
-            coords = @@coordinates_coll.find_one({:zip => zip})
+            coords = @coords_coll.find_one({:zip => zip})
             if coords != nil
 
               company["loc"] = coords["loc"]

@@ -15,13 +15,13 @@ class GoogleLocationsClient
 
     params = "q=" << zip_code
     "&output=json"
-    "&key=" << @@google_api_key
+    "&key=" << @google_api_key
 
 
-    @@geo_code_api_url_base = "http://maps.google.com/maps/geo?"
+    @geo_code_api_url_base = "http://maps.google.com/maps/geo?"
 
     begin
-      rawHtml = RestClient.get(@@geo_code_api_url_base << params)
+      rawHtml = RestClient.get(@geo_code_api_url_base << params)
     rescue Exception => e
       puts e
     end
