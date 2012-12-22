@@ -8,7 +8,7 @@ Gem::Specification.new do |s|
   s.description = "What companies are using what technologies"
   s.authors = ["Rick Dane"]
   s.email = 'r.dane1010@gmail.com'
-  s.files = FileList['lib/**/*.rb', 'lib/**/**/*.rb', 'lib/whos_using_what.rb']
+  s.files = FileList['lib/**/*.rb', 'lib/**/**/*.rb']
   s.add_dependency("oauth")
   s.add_dependency("json")
   s.add_dependency("rest-client")
