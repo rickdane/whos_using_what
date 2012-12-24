@@ -1,10 +1,12 @@
-require 'mongo_helper'
-require 'map_data_extraction_util'
-require 'google_locations_client'
+require_relative "../base"
 
-require "rest-client"
+class GeoTagger  < Base
 
-class GeoTagger
+  require 'mongo_helper'
+  require 'map_data_extraction_util'
+  require 'google_locations_client'
+
+  require "rest-client"
 
   def initialize log
     @log = log

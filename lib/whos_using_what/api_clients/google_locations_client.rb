@@ -1,6 +1,7 @@
+require_relative "../base"
 require 'map_data_extraction_util'
 
-class GoogleLocationsClient
+class GoogleLocationsClient < Base
 
 
   def initialize

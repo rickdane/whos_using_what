@@ -1,4 +1,6 @@
-class BaseApiClient
+require_relative "../base"
+
+class BaseApiClient < Base
 
   def starts_with?(string, prefix)
     prefix = prefix.to_s

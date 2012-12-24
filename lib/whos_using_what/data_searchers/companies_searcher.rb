@@ -1,4 +1,6 @@
-class CompaniesSearcher
+require_relative "../base"
+
+class CompaniesSearcher < Base
 
   #geo_tagger = instance of GeoTagger
   def initialize geo_tagger

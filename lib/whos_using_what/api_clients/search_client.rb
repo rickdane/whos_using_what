@@ -1,7 +1,9 @@
+require_relative "../base"
+
 require "uri"
 require "rest-client"
 
-class SearchClient
+class SearchClient   < Base
 
   attr :results
 
