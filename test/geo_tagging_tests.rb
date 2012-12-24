@@ -16,6 +16,7 @@ require 'geo_tagger'
 require 'companies_searcher'
 require 'logger_factory'
 require 'gather_companies'
+require 'tech_ad_tagger'
 
 
 if __FILE__ == $PROGRAM_NAME
@@ -25,23 +26,28 @@ if __FILE__ == $PROGRAM_NAME
   geo_tagger = GeoTagger.new log
   gather_companies = GatherCompanies.new
   companies_searcher = CompaniesSearcher.new geo_tagger
+  tech_ad_tagger = TechAdTagger.new
 
 
   facet_location = "us:82" #Sacramento
 
   #todo run in different threads
-  gather_companies.load_companies_to_db 700, 0, facet_location
+  #  gather_companies.load_companies_to_db 700, 0, facet_location
 
-#  log.info "begin geo-tagging tests"
+  #  log.info "begin geo-tagging tests"
 
-#  geo_tagger.load_geolocations_into_db
+  #  geo_tagger.load_geolocations_into_db
 
   #geo_tagger.update_companies_with_latitude_longitude
 
   #near = companies_searcher.geospatial_search -122.4099154, 37.8059887
 
-#  near = companies_searcher.zip_code_search "95688"
+  #  near = companies_searcher.zip_code_search "95688"
 
-  puts near
+  @programming_languages = [ "java", "ruby", "c#", "php", "python", "javascript"]
+
+  tech_ad_tagger.tag_company_with_technologies @programming_languages
+
+#  puts near
 
 end
