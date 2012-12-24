@@ -1,10 +1,10 @@
 require_relative "../base"
 
-require 'mongo_helper'
-require 'linkedin_client'
-
 #meant to be able to be used as long-running process to save company data to DB
 class GatherCompanies < Base
+
+  require 'mongo_helper'
+  require 'linkedin_client'
 
   def initialize
 

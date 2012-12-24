@@ -1,11 +1,13 @@
-require 'mongo'
-require 'uri'
-require 'json'
-require 'yaml'
+require_relative '../base'
 
 include Mongo
 
-class MongoHelper
+class MongoHelper < Base
+
+  require 'mongo'
+  require 'uri'
+  require 'json'
+  require 'yaml'
 
   def self.get_connection
     return @db_connection if @db_connection
