@@ -15,9 +15,7 @@ $:.unshift(File.expand_path('../../lib/whos_using_what', __FILE__))
 require 'geo_tagger'
 require 'companies_searcher'
 require 'logger_factory'
-=begin
 require 'gather_companies'
-=end
 
 
 if __FILE__ == $PROGRAM_NAME
@@ -25,12 +23,14 @@ if __FILE__ == $PROGRAM_NAME
   log = LoggerFactory.get_default_logger
 
   geo_tagger = GeoTagger.new log
-#  gather_companies = GatherCompanies.new
+  gather_companies = GatherCompanies.new
   companies_searcher = CompaniesSearcher.new geo_tagger
 
 
+  facet_location = "us:82" #Sacramento
+
   #todo run in different threads
-  #gather_companies.load_companies_to_db 700, 6820
+  gather_companies.load_companies_to_db 700, 0, facet_location
 
 #  log.info "begin geo-tagging tests"
 
@@ -40,7 +40,7 @@ if __FILE__ == $PROGRAM_NAME
 
   #near = companies_searcher.geospatial_search -122.4099154, 37.8059887
 
-  near = companies_searcher.zip_code_search "95688"
+#  near = companies_searcher.zip_code_search "95688"
 
   puts near
 

@@ -21,7 +21,7 @@ class GatherCompanies < Base
 
   end
 
-  def load_companies_to_db num_iterations, cur_start_position
+  def load_companies_to_db num_iterations, cur_start_position, facet_location_code
 
     increment = 20
     cnt = 1
@@ -32,7 +32,7 @@ class GatherCompanies < Base
       resp = @@linkedin_client.query_companies ({
           "start" => cur_start_position.to_s << "&count=" << increment.to_s,
           "facet=industry" => @linkedin_tech_industry_codes,
-          "locations:(address:(postal-code))" => "95688"
+          "facet=location"=> facet_location_code
       })
       docs = resp['companies'].values[3]
       if docs != nil
