@@ -22,7 +22,79 @@
       <file leaf-file-name="whos_using_what.gemspec" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/whos_using_what.gemspec">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="4" column="21" selection-start="96" selection-end="96" vertical-scroll-proportion="0.12820514">
+            <state line="4" column="21" selection-start="96" selection-end="96" vertical-scroll-proportion="0.13513513">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="google_locations_client.rb" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/lib/whos_using_what/api_clients/google_locations_client.rb">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="3" column="34" selection-start="97" selection-end="97" vertical-scroll-proportion="0.0">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="linkedin_client.rb" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/lib/whos_using_what/api_clients/linkedin_client.rb">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="9" column="7" selection-start="119" selection-end="119" vertical-scroll-proportion="0.0">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="search_client.rb" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/lib/whos_using_what/api_clients/search_client.rb">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="1" column="0" selection-start="27" selection-end="27" vertical-scroll-proportion="0.0">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="gather_companies.rb" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/lib/whos_using_what/data_gatherers/gather_companies.rb">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="6" column="27" selection-start="190" selection-end="190" vertical-scroll-proportion="0.0">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="geo_tagger.rb" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/lib/whos_using_what/data_gatherers/geo_tagger.rb">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="6" column="14" selection-start="129" selection-end="129" vertical-scroll-proportion="0.0">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="companies_searcher.rb" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/lib/whos_using_what/data_searchers/companies_searcher.rb">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="1" column="19" selection-start="27" selection-end="27" vertical-scroll-proportion="0.0">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="mongo_helper.rb" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/lib/whos_using_what/no_sql/mongo_helper.rb">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="base_api_client.rb" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/lib/whos_using_what/api_clients/base_api_client.rb">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="2" column="27" selection-start="54" selection-end="54" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
@@ -49,10 +121,10 @@
         <option value="$PROJECT_DIR$/lib/whos_using_what/data_searchers/companies_searcher.rb" />
         <option value="$PROJECT_DIR$/lib/whos_using_what/api_clients/google_locations_client.rb" />
         <option value="$PROJECT_DIR$/lib/whos_using_what/api_clients/base_api_client.rb" />
-        <option value="$PROJECT_DIR$/lib/whos_using_what/api_clients/linkedin_client.rb" />
         <option value="$PROJECT_DIR$/lib/whos_using_what/api_clients/search_client.rb" />
         <option value="$PROJECT_DIR$/lib/whos_using_what/data_gatherers/gather_companies.rb" />
         <option value="$PROJECT_DIR$/lib/whos_using_what/no_sql/mongo_helper.rb" />
+        <option value="$PROJECT_DIR$/lib/whos_using_what/api_clients/linkedin_client.rb" />
         <option value="$PROJECT_DIR$/whos_using_what.gemspec" />
       </list>
     </option>
@@ -604,9 +676,16 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/lib/whos_using_what/api_clients/linkedin_client.rb">
+    <entry file="file://$PROJECT_DIR$/lib/whos_using_what/util/map_data_extraction_util.rb">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="7" column="27" selection-start="103" selection-end="103" vertical-scroll-proportion="0.22435898">
+        <state line="4" column="29" selection-start="143" selection-end="143" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/test/geo_tagging_tests.rb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="42" column="0" selection-start="1180" selection-end="1180" vertical-scroll-proportion="0.67948717">
           <folding />
         </state>
       </provider>
@@ -618,30 +697,9 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/lib/whos_using_what/api_clients/base_api_client.rb">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="2" column="27" selection-start="54" selection-end="54" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/lib/whos_using_what/api_clients/search_client.rb">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="1" column="0" selection-start="27" selection-end="27" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/lib/whos_using_what/data_gatherers/gather_companies.rb">
       <provider selected="true" editor-type-id="text-editor">
         <state line="6" column="27" selection-start="190" selection-end="190" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/lib/whos_using_what/data_gatherers/geo_tagger.rb">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="6" column="14" selection-start="129" selection-end="129" vertical-scroll-proportion="0.0">
           <folding />
         </state>
       </provider>
@@ -660,23 +718,37 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/lib/whos_using_what/util/map_data_extraction_util.rb">
+    <entry file="file://$PROJECT_DIR$/lib/whos_using_what/api_clients/base_api_client.rb">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="4" column="29" selection-start="143" selection-end="143" vertical-scroll-proportion="0.0">
+        <state line="2" column="27" selection-start="54" selection-end="54" vertical-scroll-proportion="0.0">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/test/geo_tagging_tests.rb">
+    <entry file="file://$PROJECT_DIR$/lib/whos_using_what/api_clients/search_client.rb">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="42" column="0" selection-start="1180" selection-end="1180" vertical-scroll-proportion="0.67948717">
+        <state line="1" column="0" selection-start="27" selection-end="27" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/lib/whos_using_what/api_clients/linkedin_client.rb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="9" column="7" selection-start="119" selection-end="119" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/lib/whos_using_what/data_gatherers/geo_tagger.rb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="6" column="14" selection-start="129" selection-end="129" vertical-scroll-proportion="0.0">
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/whos_using_what.gemspec">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="4" column="21" selection-start="96" selection-end="96" vertical-scroll-proportion="0.12820514">
+        <state line="4" column="21" selection-start="96" selection-end="96" vertical-scroll-proportion="0.13513513">
           <folding />
         </state>
       </provider>

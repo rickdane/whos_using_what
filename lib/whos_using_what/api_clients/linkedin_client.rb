@@ -1,11 +1,10 @@
-
+require_relative 'base_api_client'
 
 class LinkedinClient < BaseApiClient
 
 
   require 'oauth'
   require 'json'
-  require 'base_api_client'
 
 
   @@json_indicator = "format=json"
