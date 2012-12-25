@@ -1,6 +1,6 @@
 require_relative "../base"
 
-class GeoTagger  < Base
+class GeoTagger < Base
 
   require 'mongo_helper'
   require 'map_data_extraction_util'
@@ -97,7 +97,9 @@ class GeoTagger  < Base
 
   def load_geolocations_into_db
 
-    @companies_coll.find().to_a.each do |company|
+    companies = @companies_coll.find()
+    companies_arr = companies.to_a
+    companies_arr.each do |company|
 
       if !company
         next
