@@ -22,7 +22,7 @@
       <file leaf-file-name="whos_using_what_search_client.rb" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/lib/whos_using_what/api_clients/whos_using_what_search_client.rb">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="153" column="7" selection-start="2913" selection-end="2913" vertical-scroll-proportion="0.086448595">
+            <state line="135" column="30" selection-start="2628" selection-end="2628" vertical-scroll-proportion="0.48598132">
               <folding />
             </state>
           </provider>
@@ -490,7 +490,7 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" type="ruby-line">
           <url>file://$PROJECT_DIR$/lib/whos_using_what/api_clients/whos_using_what_search_client.rb</url>
-          <line>160</line>
+          <line>165</line>
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
@@ -587,7 +587,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/lib/whos_using_what/api_clients/whos_using_what_search_client.rb">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="153" column="7" selection-start="2913" selection-end="2913" vertical-scroll-proportion="0.086448595">
+        <state line="135" column="30" selection-start="2628" selection-end="2628" vertical-scroll-proportion="0.48598132">
           <folding />
         </state>
       </provider>
