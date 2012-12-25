@@ -19,10 +19,19 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="data_populators.rb" pinned="false" current="true" current-in-tab="true">
+      <file leaf-file-name="data_populators.rb" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/lib/whos_using_what/scripts/data_populators.rb">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="58" column="18" selection-start="1204" selection-end="1204" vertical-scroll-proportion="0.41272432">
+            <state line="45" column="99" selection-start="1029" selection-end="1029" vertical-scroll-proportion="0.0">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="whos_using_what.gemspec" pinned="false" current="true" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/whos_using_what.gemspec">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="4" column="20" selection-start="95" selection-end="95" vertical-scroll-proportion="0.09787928">
               <folding />
             </state>
           </provider>
@@ -54,7 +63,6 @@
         <option value="$PROJECT_DIR$/lib/whos_using_what/api_clients/base_api_client.rb" />
         <option value="$PROJECT_DIR$/lib/whos_using_what/api_clients/search_client.rb" />
         <option value="$PROJECT_DIR$/lib/whos_using_what/api_clients/linkedin_client.rb" />
-        <option value="$PROJECT_DIR$/whos_using_what.gemspec" />
         <option value="$PROJECT_DIR$/lib/whos_using_what/no_sql/mongo_helper.rb" />
         <option value="$PROJECT_DIR$/lib/whos_using_what/data_gatherers/gather_companies.rb" />
         <option value="$PROJECT_DIR$/lib/whos_using_what/api_clients/search_engine_client.rb" />
@@ -63,6 +71,7 @@
         <option value="$PROJECT_DIR$/lib/whos_using_what/data_gatherers/tech_ad_tagger.rb" />
         <option value="$PROJECT_DIR$/lib/whos_using_what/data_gatherers/geo_tagger.rb" />
         <option value="$PROJECT_DIR$/lib/whos_using_what/scripts/data_populators.rb" />
+        <option value="$PROJECT_DIR$/whos_using_what.gemspec" />
       </list>
     </option>
   </component>
@@ -497,11 +506,6 @@
         <state line="2" column="27" selection-start="54" selection-end="54" vertical-scroll-proportion="0.032051284" />
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/whos_using_what.gemspec">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="14" column="29" selection-start="451" selection-end="451" vertical-scroll-proportion="0.47297296" />
-      </provider>
-    </entry>
     <entry file="file://$USER_HOME$/.rvm/rubies/ruby-1.9.3-p327/lib/ruby/site_ruby/1.9.1/rubygems/custom_require.rb">
       <provider selected="true" editor-type-id="text-editor">
         <state line="35" column="0" selection-start="1040" selection-end="1040" vertical-scroll-proportion="0.3318078" />
@@ -563,7 +567,14 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/lib/whos_using_what/scripts/data_populators.rb">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="58" column="18" selection-start="1204" selection-end="1204" vertical-scroll-proportion="0.41272432">
+        <state line="45" column="99" selection-start="1029" selection-end="1029" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/whos_using_what.gemspec">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="4" column="20" selection-start="95" selection-end="95" vertical-scroll-proportion="0.09787928">
           <folding />
         </state>
       </provider>
