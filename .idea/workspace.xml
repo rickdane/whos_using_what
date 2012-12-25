@@ -19,10 +19,10 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="tech_ad_tagger.rb" pinned="false" current="true" current-in-tab="true">
+      <file leaf-file-name="tech_ad_tagger.rb" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/lib/whos_using_what/data_gatherers/tech_ad_tagger.rb">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="10" column="0" selection-start="165" selection-end="165" vertical-scroll-proportion="0.3318182">
+            <state line="8" column="0" selection-start="126" selection-end="126" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
@@ -37,10 +37,10 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="google_client.rb" pinned="false" current="false" current-in-tab="false">
+      <file leaf-file-name="google_client.rb" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/lib/whos_using_what/api_clients/google_client.rb">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="112" column="0" selection-start="2338" selection-end="2338" vertical-scroll-proportion="0.0">
+            <state line="128" column="0" selection-start="2734" selection-end="2734" vertical-scroll-proportion="0.6392962">
               <folding />
             </state>
           </provider>
@@ -380,15 +380,15 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="65" y="24" width="1537" height="905" extended-state="0" />
-    <editor active="false" />
+    <editor active="true" />
     <layout>
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.42894056" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="true" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.24848485" sideWeight="0.60594314" order="0" side_tool="false" content_ui="combo" />
-      <window_info id="Debug" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.39405686" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.24848485" sideWeight="0.49483204" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.50516796" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3397933" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
@@ -456,26 +456,6 @@
         <line-breakpoint enabled="true" type="ruby-line">
           <url>file://$PROJECT_DIR$/test/geo_tagging_tests.rb</url>
           <line>34</line>
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="ruby-line">
-          <url>file://$PROJECT_DIR$/lib/whos_using_what/api_clients/google_client.rb</url>
-          <line>128</line>
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="ruby-line">
-          <url>file://$PROJECT_DIR$/lib/whos_using_what/api_clients/google_client.rb</url>
-          <line>99</line>
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="ruby-line">
-          <url>file://$PROJECT_DIR$/lib/whos_using_what/data_gatherers/tech_ad_tagger.rb</url>
-          <line>8</line>
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="ruby-line">
-          <url>file://$PROJECT_DIR$/lib/whos_using_what/data_gatherers/tech_ad_tagger.rb</url>
-          <line>10</line>
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="ruby-line">
-          <url>file://$PROJECT_DIR$/lib/whos_using_what/api_clients/google_client.rb</url>
-          <line>89</line>
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
@@ -562,16 +542,16 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/lib/whos_using_what/api_clients/google_client.rb">
+    <entry file="file://$PROJECT_DIR$/lib/whos_using_what/data_gatherers/tech_ad_tagger.rb">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="112" column="0" selection-start="2338" selection-end="2338" vertical-scroll-proportion="0.0">
+        <state line="8" column="0" selection-start="126" selection-end="126" vertical-scroll-proportion="0.0">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/lib/whos_using_what/data_gatherers/tech_ad_tagger.rb">
+    <entry file="file://$PROJECT_DIR$/lib/whos_using_what/api_clients/google_client.rb">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="10" column="0" selection-start="165" selection-end="165" vertical-scroll-proportion="0.3318182">
+        <state line="128" column="0" selection-start="2734" selection-end="2734" vertical-scroll-proportion="0.6392962">
           <folding />
         </state>
       </provider>
