@@ -5,7 +5,7 @@ class BaseApiClient < Base
   require "uri"
   require "rest-client"
 
-  def arraySearch(array, rawHtml)
+  def self.arraySearch(array, rawHtml)
 
     rawHtml = rawHtml.downcase
     array.each do |token|
@@ -16,7 +16,8 @@ class BaseApiClient < Base
     return false
   end
 
-  def arry_to_str_delim array, delim
+
+  def self.arry_to_str_delim array, delim
 
     str = ""
     i = 0
@@ -34,7 +35,7 @@ class BaseApiClient < Base
   end
 
 
-  def cleanup_url url
+  def self.cleanup_url url
     #clean up url
     url = url.strip
     if url["www."] != nil
@@ -56,12 +57,13 @@ class BaseApiClient < Base
   end
 
 
-  def starts_with?(string, prefix)
+  def self.starts_with?(string, prefix)
     prefix = prefix.to_s
     string[0, prefix.length] == prefix
   end
 
-  def prepare_params_from_map_helper (base_url, params_map)
+
+  def self.prepare_params_from_map_helper (base_url, params_map)
 
     iter = 1
 
