@@ -40,6 +40,9 @@ class BaseApiClient < Base
     if url["www."] != nil
       url["www."] = ""
     end
+    if url["site:"] != nil
+      url["site:"] = ""
+    end
     url
 
   end

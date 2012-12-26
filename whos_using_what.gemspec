@@ -2,7 +2,7 @@ require 'rake'
 
 Gem::Specification.new do |s|
   s.name = 'whos_using_what'
-  s.version = '0.3.1'
+  s.version = '0.3.2'
   s.date = '2012-12-02'
   s.summary = "Who's Using What?"
   s.description = "What companies are using what technologies"
@@ -14,6 +14,7 @@ Gem::Specification.new do |s|
   s.add_dependency("rest-client")
   s.add_dependency("rake")
   s.add_dependency("rspec")
+  s.add_dependency("mechanize")
   s.add_dependency("mongo")
   s.homepage =
       'http://rubygems.org/gems/whos_using_what'
