@@ -40,7 +40,7 @@
       <file leaf-file-name="google_client.rb" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/lib/whos_using_what/api_clients/google_client.rb">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="128" column="53" selection-start="2652" selection-end="2652" vertical-scroll-proportion="0.12413793">
+            <state line="133" column="0" selection-start="2764" selection-end="2764" vertical-scroll-proportion="0.3265766">
               <folding />
             </state>
           </provider>
@@ -405,8 +405,8 @@
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.42894056" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="true" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.25252524" sideWeight="0.65633076" order="0" side_tool="false" content_ui="combo" />
-      <window_info id="Debug" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.34366927" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.25252524" sideWeight="0.6679587" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Debug" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.33204135" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.40697673" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
@@ -477,15 +477,11 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" type="ruby-line">
           <url>file://$PROJECT_DIR$/lib/whos_using_what/api_clients/google_client.rb</url>
-          <line>151</line>
+          <line>152</line>
         </line-breakpoint>
         <line-breakpoint enabled="true" type="ruby-line">
           <url>file://$PROJECT_DIR$/lib/whos_using_what/api_clients/google_client.rb</url>
-          <line>145</line>
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="ruby-line">
-          <url>file://$PROJECT_DIR$/lib/whos_using_what/api_clients/google_client.rb</url>
-          <line>130</line>
+          <line>143</line>
         </line-breakpoint>
         <line-breakpoint enabled="true" type="ruby-line">
           <url>file://$PROJECT_DIR$/lib/whos_using_what/api_clients/google_client.rb</url>
@@ -584,7 +580,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/lib/whos_using_what/api_clients/google_client.rb">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="128" column="53" selection-start="2652" selection-end="2652" vertical-scroll-proportion="0.12413793">
+        <state line="133" column="0" selection-start="2764" selection-end="2764" vertical-scroll-proportion="0.3265766">
           <folding />
         </state>
       </provider>
