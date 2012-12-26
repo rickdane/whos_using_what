@@ -66,7 +66,7 @@ class GatherCompanies < Base
         @@companies_coll.insert company
 
       end
-      cnt += i
+      cnt += cnt
     end
 
   end
