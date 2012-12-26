@@ -8,6 +8,7 @@ class LinkedinClient < BaseApiClient
 
 
   @@json_indicator = "format=json"
+  @@base_url = "http://api.linkedin.com/v1/"
 
 
   def initialize(api_key, api_secret, user_token, user_secret, url)
@@ -22,8 +23,6 @@ class LinkedinClient < BaseApiClient
 
   def query_companies params
 
-    @@base_url = "http://api.linkedin.com/v1/"
-
     base_url = @@base_url <<
         "company-search:(
         companies:(
@@ -43,32 +42,24 @@ class LinkedinClient < BaseApiClient
   end
 
 
-  def query_people_from_company params
+  def query_people_from_company company_name, location
 
-    @@base_url = "http://api.linkedin.com/v1/"
+    company_name = company_name.gsub(/\s+/, "+")
+    location = location.gsub(/\s+/, "+")
 
-    base_url = @@base_url <<
-        "company-search:(
-        companies:(
-        id,
-        name,
-        universal-name,
-        website-url,
-        industries,
-        logo-url,
-        employee-count-range,
-        locations
-      )
-    )"
+    url = @@base_url <<
+        "people-search?
+        company-name=" << company_name << ",
+        &location=" << location
 
-    json_api_call_helper(base_url, params)
+    json_api_call_helper url, {}
 
   end
 
 
   def json_api_call_helper (base_url, params)
 
-    url = prepare_params_from_map_helper(base_url, params)
+    url = BaseApiClient.prepare_params_from_map_helper(base_url, params)
 
     #remove white spaces, for ease in reading queries, they may have white spaces / line breaks
     url = url.gsub(/\s+/, "")

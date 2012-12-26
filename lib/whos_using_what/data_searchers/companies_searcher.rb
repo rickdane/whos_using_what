@@ -21,9 +21,9 @@ class CompaniesSearcher < Base
   end
 
   #find people from a company, based off the user's network and connections
-  def find_people_for_company company_name
+  def find_people_for_company linkedin_client, company_name, location
 
-
+    puts linkedin_client.query_people_from_company company_name, location
 
   end
 
