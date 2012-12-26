@@ -35,7 +35,7 @@ class GatherCompanies < Base
       keyword = "ruby"
       city_state = "pleasant hill, ca"
 
-      json_resp = @indeed_api_client.perform_search keyword, city_state, increment, (increment * cnt-1) + 1
+      json_resp = @indeed_api_client.perform_search keyword, city_state, increment, (increment * (cnt-1)) + 1
 
       json_resp['results'].each do |job|
 
