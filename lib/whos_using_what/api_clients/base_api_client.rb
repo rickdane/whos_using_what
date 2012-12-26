@@ -1,4 +1,7 @@
 require_relative "../base"
+require 'mechanize'
+require 'watir-webdriver'
+require 'headless'
 
 class BaseApiClient < Base
 

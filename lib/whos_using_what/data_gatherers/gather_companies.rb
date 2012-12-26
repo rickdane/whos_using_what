@@ -5,10 +5,13 @@ class GatherCompanies < Base
 
   require 'mongo_helper'
   require 'linkedin_client'
+  require 'indeed_api_client'
 
   def initialize
 
     @linkedin_tech_industry_codes = "4,132,6,96,113";
+
+    @indeed_api_client = IndeedApiClient.new
 
     @@mongo_client = MongoHelper.get_mongo_connection
 
@@ -18,6 +21,17 @@ class GatherCompanies < Base
 
     @@linkedin_client = LinkedinClient.new @li_config["api_key"], @li_config["api_secret"], @li_config["user_token"], @li_config["user_secret"], @li_config["url"]
 
+
+  end
+
+  def load_companies_from_indeed
+
+    companies = @indeed_api_client.perform_search "ruby", "pleasant hill, ca"
+
+    companies.each do |company|
+
+      s = ""
+    end
 
   end
 
@@ -32,7 +46,7 @@ class GatherCompanies < Base
       resp = @@linkedin_client.query_companies ({
           "start" => cur_start_position.to_s << "&count=" << increment.to_s,
           "facet=industry" => @linkedin_tech_industry_codes,
-          "facet=location"=> facet_location_code
+          "facet=location" => facet_location_code
       })
       docs = resp['companies'].values[3]
       if docs != nil
