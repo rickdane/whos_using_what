@@ -14,9 +14,14 @@ class LinkedinClient < BaseApiClient
   def initialize(api_key, api_secret, user_token, user_secret, url)
     super()
 
-    consumer = OAuth::Consumer.new(api_key, api_secret, {:site => url})
+    @consumer = OAuth::Consumer.new(api_key, api_secret, {
+        :site => url,
+      #  :scope => "r_basicprofile+r_emailaddress+r_network"
+    })
 
-    @access_token = OAuth::AccessToken.new(consumer, user_token, user_secret)
+    @consumer.options[:request_token_path] = @consumer.options[:request_token_path] << "?scope=r_fullprofile+r_emailaddress+r_network"
+
+    @access_token = OAuth::AccessToken.new(@consumer, user_token, user_secret)
 
   end
 
