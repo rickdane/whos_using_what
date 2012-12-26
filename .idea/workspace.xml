@@ -22,7 +22,7 @@
       <file leaf-file-name="indeed_api_client.rb" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/lib/whos_using_what/api_clients/indeed_api_client.rb">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="26" column="0" selection-start="622" selection-end="622" vertical-scroll-proportion="0.0">
+            <state line="26" column="0" selection-start="632" selection-end="632" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
@@ -40,7 +40,7 @@
       <file leaf-file-name="gather_companies.rb" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/lib/whos_using_what/data_gatherers/gather_companies.rb">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="37" column="105" selection-start="1004" selection-end="1004" vertical-scroll-proportion="0.3325062">
+            <state line="39" column="36" selection-start="1044" selection-end="1044" vertical-scroll-proportion="0.6426799">
               <folding />
             </state>
           </provider>
@@ -557,14 +557,14 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/lib/whos_using_what/api_clients/indeed_api_client.rb">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="26" column="0" selection-start="622" selection-end="622" vertical-scroll-proportion="0.0">
+        <state line="26" column="0" selection-start="632" selection-end="632" vertical-scroll-proportion="0.0">
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/lib/whos_using_what/data_gatherers/gather_companies.rb">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="37" column="105" selection-start="1004" selection-end="1004" vertical-scroll-proportion="0.3325062">
+        <state line="39" column="36" selection-start="1044" selection-end="1044" vertical-scroll-proportion="0.6426799">
           <folding />
         </state>
       </provider>
