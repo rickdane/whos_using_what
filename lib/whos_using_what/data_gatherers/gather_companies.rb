@@ -26,39 +26,47 @@ class GatherCompanies < Base
 
   def load_companies_from_indeed
 
-    keyword = "ruby"
-    city_state = "pleasant hill, ca"
+    num_iterations = 15
+    increment = 20
+    cnt = 1
 
-    json_resp = @indeed_api_client.perform_search keyword, city_state
+    while cnt <= num_iterations do
 
-    json_resp['results'].each do |job|
+      keyword = "ruby"
+      city_state = "pleasant hill, ca"
 
-      if  @@companies_coll.find_one({'name' => job['company']}) != nil
-        next
+      json_resp = @indeed_api_client.perform_search keyword, city_state, increment, (increment * cnt) + 1
+
+      json_resp['results'].each do |job|
+
+        if  @@companies_coll.find_one({'name' => job['company']}) != nil
+          next
+        end
+
+        company = {}
+
+        company['locations'] = {
+            values: [
+                {
+                    address: {
+                        city: job['city'],
+                        state: job['state'],
+                        country: job['country']
+                    }
+                }
+            ]
+        }
+        company['name']= job['company']
+        company['languages'] =
+            {
+                keyword.to_s => job['url']
+            }
+
+
+        @@companies_coll.insert company
+
       end
-
-      company = {}
-
-      company['locations'] = {
-          values: [
-              {
-                  address: {
-                      city: job['city'],
-                      state: job['state'],
-                      country: job['country']
-                  }
-              }
-          ]
-      }
-      company['name']= job['company']
-      company['languages'] =
-          {
-              keyword.to_s => job['url']
-          }
-
-
-      @@companies_coll.insert company
-
+      cnt += i
     end
 
   end
