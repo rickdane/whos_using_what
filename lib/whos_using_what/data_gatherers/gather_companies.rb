@@ -26,11 +26,35 @@ class GatherCompanies < Base
 
   def load_companies_from_indeed
 
-    companies = @indeed_api_client.perform_search "ruby", "pleasant hill, ca"
+    keyword = "ruby"
+    city_state = "pleasant hill, ca"
 
-    companies.each do |company|
+    json_resp = @indeed_api_client.perform_search keyword, city_state
 
-      s = ""
+    json_resp['results'].each do |job|
+
+      company = {}
+
+      company['locations'] = {
+          values: [
+              {
+                  address: {
+                      city: job['city'],
+                      state: job['state'],
+                      country: job['country']
+                  }
+              }
+          ]
+      }
+      company['name']= job['company']
+      company['languages'] =
+          {
+              keyword.to_s => job['url']
+          }
+
+
+      @@companies_coll.insert company
+
     end
 
   end
