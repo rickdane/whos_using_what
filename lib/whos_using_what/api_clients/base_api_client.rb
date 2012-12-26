@@ -50,7 +50,7 @@ class BaseApiClient < Base
 
   def determineIfUsesTechnology(technology, rawHtml)
 
-    isJobPage = arraySearch(@jobPageTokens, rawHtml)
+    isJobPage = BaseApiClient.arraySearch(@jobPageTokens, rawHtml)
 
     return isJobPage
 
