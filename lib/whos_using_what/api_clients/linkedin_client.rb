@@ -43,6 +43,29 @@ class LinkedinClient < BaseApiClient
   end
 
 
+  def query_people_from_company params
+
+    @@base_url = "http://api.linkedin.com/v1/"
+
+    base_url = @@base_url <<
+        "company-search:(
+        companies:(
+        id,
+        name,
+        universal-name,
+        website-url,
+        industries,
+        logo-url,
+        employee-count-range,
+        locations
+      )
+    )"
+
+    json_api_call_helper(base_url, params)
+
+  end
+
+
   def json_api_call_helper (base_url, params)
 
     url = prepare_params_from_map_helper(base_url, params)

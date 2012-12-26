@@ -26,9 +26,9 @@ class GatherCompanies < Base
 
   def load_companies_from_indeed
 
-    num_iterations = 15
+    num_iterations = 20
     increment = 20
-    cnt = 1
+    cnt = 15
 
     while cnt <= num_iterations do
 

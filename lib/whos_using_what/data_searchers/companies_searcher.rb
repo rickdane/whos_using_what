@@ -20,6 +20,13 @@ class CompaniesSearcher < Base
 
   end
 
+  #find people from a company, based off the user's network and connections
+  def find_people_for_company company_name
+
+
+
+  end
+
   def zip_code_search zip_code
 
     zip_doc = @coords_coll.find_one({:zip => zip_code})
