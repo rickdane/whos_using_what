@@ -33,7 +33,7 @@ class GatherCompanies < Base
 
     json_resp['results'].each do |job|
 
-      if  @@companies_coll.findOne({'name' => job['company']}) != nil
+      if  @@companies_coll.find_one({'name' => job['company']}) != nil
         next
       end
 

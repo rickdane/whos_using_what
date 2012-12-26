@@ -40,7 +40,7 @@
       <file leaf-file-name="gather_companies.rb" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/lib/whos_using_what/data_gatherers/gather_companies.rb">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="39" column="0" selection-start="1008" selection-end="1008" vertical-scroll-proportion="0.56886226">
+            <state line="35" column="35" selection-start="949" selection-end="949" vertical-scroll-proportion="0.33333334">
               <folding />
             </state>
           </provider>
@@ -564,7 +564,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/lib/whos_using_what/data_gatherers/gather_companies.rb">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="39" column="0" selection-start="1008" selection-end="1008" vertical-scroll-proportion="0.56886226">
+        <state line="35" column="35" selection-start="949" selection-end="949" vertical-scroll-proportion="0.33333334">
           <folding />
         </state>
       </provider>
