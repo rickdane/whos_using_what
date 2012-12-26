@@ -53,8 +53,8 @@ class LinkedinClient < BaseApiClient
     location = location.gsub(/\s+/, "+")
 
     url = @@base_url <<
-        "people-search?
-        company-name=" << company_name << ",
+        "people-search:(people:(id,first-name,last-name,public-profile-url,picture-url,headline),num-results)" <<
+        "?company-name=" << company_name << ",
         &location=" << location
 
     json_api_call_helper url, {}
