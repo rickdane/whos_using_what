@@ -130,9 +130,11 @@ class GeoTagger < Base
 
   def update_companies_with_latitude_longitude
 
-    @log.info "beginning updating of companies with latitude and longitude data"
+    puts "beginning updating of companies with latitude and longitude data"
 
-    @companies_coll.find().to_a.each do |company|
+    @companies_coll.find('loc' => {
+        '$exists' => false
+    }).to_a.each do |company|
 
 
       locations = MapDataExtractionUtil.safe_extract_helper ["locations", "values"], company, nil, nil
@@ -145,11 +147,13 @@ class GeoTagger < Base
 
           if zip
 
+            zip = zip[0..4]
             coords = @coords_coll.find_one({:zip => zip})
             if coords != nil
 
               company["loc"] = coords["loc"]
 
+              puts "updating  geo-coordinates for company with id: " << company["_id"].to_s
               @companies_coll.update({"_id" => company["_id"]}, company)
 
             end

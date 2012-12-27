@@ -2,8 +2,8 @@ require 'rake'
 
 Gem::Specification.new do |s|
   s.name = 'whos_using_what'
-  s.version = '1.0.4'
-  s.date = '2012-12-25'
+  s.version = '1.0.5'
+  s.date = '2012-12-26'
   s.summary = "Who's Using What?"
   s.description = "What companies are using what technologies"
   s.authors = ["Rick Dane"]

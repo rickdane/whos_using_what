@@ -52,7 +52,9 @@ class LinkedinClient < BaseApiClient
     company_name = company_name.gsub(/\s+/, "+")
     location = location.gsub(/\s+/, "+")
 
-    url = @@base_url <<
+    base_url_tmp = @@base_url
+
+    url = base_url_tmp <<
         "people-search:(people:(id,first-name,last-name,public-profile-url,picture-url,headline),num-results)" <<
         "?company-name=" << company_name << ",
         &location=" << location
