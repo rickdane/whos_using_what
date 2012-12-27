@@ -52,12 +52,12 @@ class LinkedinClient < BaseApiClient
     company_name = company_name.gsub(/\s+/, "+")
     location = location.gsub(/\s+/, "+")
 
-    base_url_tmp = @@base_url
+    base_url_tmp = @@base_url.clone
 
     url = base_url_tmp <<
         "people-search:(people:(id,first-name,last-name,public-profile-url,picture-url,headline),num-results)" <<
-        "?company-name=" << company_name << ",
-        &location=" << location
+        "?company-name=" << company_name << "," <<
+        "&location=" << location
 
     json_api_call_helper url, {}
 
