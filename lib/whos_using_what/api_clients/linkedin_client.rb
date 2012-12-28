@@ -16,7 +16,7 @@ class LinkedinClient < BaseApiClient
 
     @consumer = OAuth::Consumer.new(api_key, api_secret, {
         :site => url,
-      #  :scope => "r_basicprofile+r_emailaddress+r_network"
+        #  :scope => "r_basicprofile+r_emailaddress+r_network"
     })
 
     @consumer.options[:request_token_path] = @consumer.options[:request_token_path] << "?scope=r_fullprofile+r_emailaddress+r_network"
@@ -57,16 +57,48 @@ class LinkedinClient < BaseApiClient
     url = base_url_tmp <<
         "people-search:(people:(id,first-name,last-name,public-profile-url,picture-url,headline),num-results)" <<
         "?company-name=" << company_name << "," <<
-        "&location=" << location
+        "&location=" << location <<
+        "&current-company=true"
 
     json_api_call_helper url, {}
 
   end
 
+  def query_people_from_company_ids company_ids, title, location
 
-  def json_api_call_helper (base_url, params)
+    location = location.gsub(/\s+/, "+")
 
-    url = BaseApiClient.prepare_params_from_map_helper(base_url, params)
+    base_url_tmp = @@base_url.clone
+
+    company_id_str = ""
+    i = 1
+    company_ids.each do |company_id|
+      delim = ""
+      if i != 1
+        delim = ","
+      end
+      company_id_str = company_id_str << delim << company_id
+      i += i
+    end
+
+    url = base_url_tmp <<
+        "people-search:(people:(id,first-name,last-name,public-profile-url,picture-url,headline),num-results)" <<
+        "?facets=location,current-company" <<
+        "&facet=location," << location <<
+        "&facet=current-company," << company_id_str
+    "&current-title=" << title
+
+    json_api_call_helper url, {}, true
+
+  end
+
+
+  def json_api_call_helper (base_url, params, skip_params = false)
+
+    url = base_url.clone
+    if !skip_params
+      url = BaseApiClient.prepare_params_from_map_helper(base_url, params)
+    end
 
     #remove white spaces, for ease in reading queries, they may have white spaces / line breaks
     url = url.gsub(/\s+/, "")
