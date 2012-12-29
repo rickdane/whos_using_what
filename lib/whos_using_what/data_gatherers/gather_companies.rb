@@ -9,8 +9,6 @@ class GatherCompanies < Base
 
   def initialize
 
-    @linkedin_tech_industry_codes = "4,132,6,96,113";
-
     @indeed_api_client = IndeedApiClient.new
 
     @@mongo_client = MongoHelper.get_mongo_connection
@@ -73,17 +71,18 @@ class GatherCompanies < Base
 
   def load_companies_to_db num_iterations, cur_start_position, facet_location_code
 
-    increment = 20
+    company_size_codes = "C,D,E,F,G,H,I"
+    increment = 10
     cnt = 1
 
     while cnt <= num_iterations do
       puts cur_start_position.to_s
 
-      resp = @@linkedin_client.query_companies ({
-          "start" => cur_start_position.to_s << "&count=" << increment.to_s,
-          "facet=industry" => @linkedin_tech_industry_codes,
-          "facet=location" => facet_location_code
-      })
+      params = {
+          "start" => cur_start_position.to_s
+      }
+
+      resp = @@linkedin_client.query_companies facet_location_code, company_size_codes, params
       docs = resp['companies'].values[3]
       if docs != nil
         docs.each do |doc|
@@ -96,7 +95,7 @@ class GatherCompanies < Base
 
       cnt = cnt + 1
 
-      sleep_seconds = rand(1-35)
+      sleep_seconds = rand(1-5)
       puts "sleeping for: " << sleep_seconds.to_s << " seconds"
       sleep(sleep_seconds)
 

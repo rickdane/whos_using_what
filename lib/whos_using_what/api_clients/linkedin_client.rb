@@ -9,6 +9,8 @@ class LinkedinClient < BaseApiClient
 
   @@json_indicator = "format=json"
   @@base_url = "http://api.linkedin.com/v1/"
+  #@linkedin_tech_industry_codes = "4,132,6,96,113,80,126,81,8,36,118,28,140";
+  @@linkedin_tech_industry_codes = "80"
 
 
   def initialize(api_key, api_secret, user_token, user_secret, url)
@@ -26,7 +28,7 @@ class LinkedinClient < BaseApiClient
   end
 
 
-  def query_companies params
+  def query_companies location_code, company_size, params
 
     base_url = @@base_url <<
         "company-search:(
@@ -40,7 +42,10 @@ class LinkedinClient < BaseApiClient
         employee-count-range,
         locations
       )
-    )"
+    )?facets=industry,location,company-size" <<
+    "&facet=industry," << @@linkedin_tech_industry_codes <<
+        "&facet=location," << location_code <<
+        "&facet=company-size,C,D,E,F,G,H,I"
 
     json_api_call_helper(base_url, params)
 
