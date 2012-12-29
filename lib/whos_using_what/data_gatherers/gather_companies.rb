@@ -95,7 +95,7 @@ class GatherCompanies < Base
 
       cnt = cnt + 1
 
-      sleep_seconds = rand(1-5)
+      sleep_seconds = rand(3-9)
       puts "sleeping for: " << sleep_seconds.to_s << " seconds"
       sleep(sleep_seconds)
 

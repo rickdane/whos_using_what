@@ -43,7 +43,7 @@ class LinkedinClient < BaseApiClient
         locations
       )
     )?facets=industry,location,company-size" <<
-    "&facet=industry," << @@linkedin_tech_industry_codes <<
+        "&facet=industry," << @@linkedin_tech_industry_codes <<
         "&facet=location," << location_code <<
         "&facet=company-size,C,D,E,F,G,H,I"
 
@@ -111,6 +111,8 @@ class LinkedinClient < BaseApiClient
     puts url
 
     json = @access_token.get(url << "&" << @@json_indicator)
+
+    puts json.body
 
     JSON.parse(json.body)
 
