@@ -2,7 +2,7 @@ require 'rake'
 
 Gem::Specification.new do |s|
   s.name = 'whos_using_what'
-  s.version = '1.1.2'
+  s.version = '1.1.3'
   s.date = '2012-12-26'
   s.summary = "Who's Using What?"
   s.description = "What companies are using what technologies"
